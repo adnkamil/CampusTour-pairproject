@@ -1,0 +1,23 @@
+<%- include('partials/header') %>
+<div class="container">
+    <a href="/tours/addTour"><button class="btn btn-outline-primary">Add Project Tour</button></a>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Tour</th>
+                <th>Date</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% data.forEach(e => { %>
+                <tr>
+                    <td><%= e.name_tour %></td>
+                    <td><%= getDate(e.date) %></td>
+                    <td><%= e.University.campus %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>
+    <%- include('partials/footer') %>

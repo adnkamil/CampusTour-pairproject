@@ -1,0 +1,35 @@
+<%- include('partials/header') %>
+<div class="container">
+    <a href="/participants/addParticipant"><button class="btn btn-outline-primary">Add Participant</button></a>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Password</th>
+                <th>Tours</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% data.forEach(e => { %>
+                <tr>
+                    <td><%= e.getFullName() %></td>
+                    <td><%= e.password %></td>
+                    <td>
+                        <ul>
+                            <% e.Tours.forEach(el => { %>
+                                <li>
+                                    <p><%= el.name_tour %></p>
+                                </li>
+                            <% }) %>
+                        </ul>
+                    </td>
+                    <td>
+                        <a href="/participants/<%= e.id %>/tour"><button class="btn btn-primary">Add Tour</button></a>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>
+    <%- include('partials/footer') %>

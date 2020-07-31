@@ -1,0 +1,20 @@
+<%- include('partials/header') %>
+<div class="container">
+    <form action="/participants/addParticipant" method="post">
+        <div class="form-group">
+          <label for="exampleInputEmail1">First Name</label>
+          <input class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" type="text" name="first_name" placeholder="e.g. Son">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Last Name</label>
+            <input class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" type="text" name="last_name" placeholder="e.g. Goku">
+          </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input class="form-control" id="exampleInputPassword1" type="text" name="password" placeholder="e.g. Bulmaku">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+    <%- include('partials/footer') %>
+

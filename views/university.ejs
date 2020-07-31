@@ -1,0 +1,25 @@
+<%- include('partials/header') %>
+<div class="container">
+    <a href="/universities/addUniversity"><button class="btn btn-outline-primary">Add University</button></a>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Campus</th>
+                <th>Address</th>
+                <th>List Tour</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% data.forEach(e => { %>
+                <tr>
+                    <td><%= e.campus %></td>
+                    <td><%= e.address %></td>
+                    <td>
+                        <a href="/universities/<%= e.id %>/listTour"><button class="btn btn-primary">See Tours</button></a>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>
+<%- include('partials/footer') %>

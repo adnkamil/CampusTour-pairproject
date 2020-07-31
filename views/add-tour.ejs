@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+<div class="container">
+    <form action="/participants/<%= participant.id %>/tour" method="post">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Username : <%= participant.first_name %></label>
+        </div>
+        <select name="TourId" id="">
+            <option value="">--Choose Tour--</option>
+            <% tour.forEach(e => { %>
+                <option value="<%= e.id %>"><%= `${e.University.campus} - ${e.name_tour}` %></option>
+                <% }) %>
+            </select><br><br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+    <%- include('partials/footer') %>
